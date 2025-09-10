@@ -1,0 +1,25 @@
+/* src/components/Header.css */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #222;
+    color: #fff;
+  }
+  
+  .logo h2 {
+    margin: 0;
+  }
+  
+  .nav-links a {
+    margin-left: 20px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .nav-links a:hover {
+    color: #f5a623; /* color de acento */
+  }
+  
