@@ -1,33 +1,37 @@
 // src/components/Subscription.js
 import React from "react";
-import { loadStripe } from "@stripe/stripe-js";
-
-const stripePromise = loadStripe("TU_PUBLIC_KEY_DE_STRIPE"); // reemplaza con tu clave pública
 
 function Subscription() {
   const handleSubscribe = async () => {
-    const stripe = await stripePromise;
+    try {
+      const response = await fetch("http://localhost:5000/create-preference", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          title: "Suscripción Compañía de Danza",
+          price: 5000, // valor de la suscripción en CLP
+        }),
+      });
 
-    // Llamada a tu backend para crear sesión de Stripe
-    const response = await fetch("/create-checkout-session", {
-      method: "POST",
-    });
-    const session = await response.json();
-
-    // Redirigir al Checkout de Stripe
-    const result = await stripe.redirectToCheckout({
-      sessionId: session.id,
-    });
-
-    if (result.error) {
-      console.error(result.error.message);
+      const data = await response.json();
+      if (data.init_point) {
+        window.location.href = data.init_point; // Redirige al checkout de Mercado Pago
+      } else {
+        alert("No se pudo iniciar el pago");
+      }
+    } catch (error) {
+      console.error("Error creando preferencia:", error);
+      alert("Ocurrió un error al iniciar el pago");
     }
   };
 
   return (
-    <div>
-      <p>Suscríbete y recibe contenido exclusivo de nuestra compañía.</p>
-      <button onClick={handleSubscribe}>Suscribirse</button>
+    <div className="subscription-container">
+      <h2>Suscríbete</h2>
+      <p>Recibe contenido exclusivo de nuestra compañía de danza.</p>
+      <button className="subscribe-button" onClick={handleSubscribe}>
+        Suscribirse
+      </button>
     </div>
   );
 }
