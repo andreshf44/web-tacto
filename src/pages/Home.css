@@ -1,5 +1,12 @@
 /* src/pages/Home.css */
 
+#root{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 /* Sección de bienvenida con imagen de fondo */
 .home-header {
     position: relative;
@@ -497,4 +504,56 @@
     background-color: #555;
   }
   
+  
+  /*Contacto*/
+  .contact-section {
+    padding: 80px 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .contact-info {
+    flex: 1 1 300px;
+  }
+  
+  .contact-form-container {
+    flex: 1 1 400px;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+  }
+  
+  .contact-form button {
+    background-color: #ff4081;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .contact-form button:hover {
+    background-color: #e73370;
+  }
+  
+  .success-msg {
+    margin-top: 15px;
+    color: green;
+    font-weight: bold;
+  }
   

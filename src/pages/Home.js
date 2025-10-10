@@ -1,6 +1,8 @@
 // src/pages/Home.js
 import React from "react";
 import "./Home.css"; // Importar CSS
+import About from "./About";
+import Contact from "./Contact";
 import Gallery from "./Gallery";
 import Team from "./Team";
 import News from "./News";
@@ -20,11 +22,8 @@ function Home() {
 
         {/* Misión y Visión */}
       <section className="home-section" id="about">
-        <h2>Misión</h2>
-        <p>Inspirar y educar a través de la danza, promoviendo creatividad y disciplina artística.</p>
-
-        <h2>Visión</h2>
-        <p>Ser un referente cultural en la danza contemporánea, fomentando la participación y el talento local.</p>
+        <h2>¿Quienes somos?</h2>
+        <About />
       </section>
 
       {/* Galería */}
@@ -49,6 +48,11 @@ function Home() {
       <section className="home-section" id="subscription">
         <h2>Suscríbete y apoya la danza</h2>
         <Subscription />
+      </section>
+
+      {/* Contacto */}
+      <section className="home-section" id="contacto">
+        <Contact />
       </section>
     </div>
   );
