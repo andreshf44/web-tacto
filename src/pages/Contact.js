@@ -9,16 +9,24 @@ export default function Contact() {
     message: "",
   });
 
-  const [submitted, setSubmitted] = useState(false);
-
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Formulario enviado:", formData);
-    setSubmitted(true);
+
+    const companyPhone = "56 9 8599 1949"; // número de la compañía con código de país
+    const text = `Hola, soy ${formData.name}.\nCorreo: ${formData.email}\nAsunto: ${formData.subject}\nMensaje: ${formData.message}`;
+
+    // Codificar el mensaje para la URL
+    const encodedText = encodeURIComponent(text);
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=${companyPhone}&text=${encodedText}`;
+
+    // Abrir WhatsApp en nueva pestaña
+    window.open(whatsappUrl, "_blank");
+
+    // Limpiar formulario
     setFormData({ name: "", email: "", subject: "", message: "" });
   };
 
@@ -67,10 +75,7 @@ export default function Contact() {
               onChange={handleChange}
               required
             ></textarea>
-            <button type="submit">Enviar</button>
-            {submitted && (
-              <p className="success-msg">¡Formulario enviado correctamente!</p>
-            )}
+            <button type="submit">Enviar por WhatsApp</button>
           </form>
         </div>
       </div>

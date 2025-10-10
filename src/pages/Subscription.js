@@ -10,8 +10,11 @@ function Subscription() {
   return (
     <div className="subscription-container">
       <h2>Suscríbete</h2>
-      <p>Recibe contenido exclusivo de nuestra compañía de danza.</p>
-      <button onClick={handleSubscribe}>
+      <p>
+        Recibe contenido exclusivo de nuestra compañía de danza y mantente al
+        día con nuestras actividades y talleres.
+      </p>
+      <button className="subscribe-button" onClick={handleSubscribe}>
         Suscribirse
       </button>
     </div>
@@ -19,4 +22,5 @@ function Subscription() {
 }
 
 export default Subscription;
+
 

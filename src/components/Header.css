@@ -1,11 +1,15 @@
 /* src/components/Header.css */
 .site-header {
+  height: 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
     background-color: #222;
     color: #fff;
+    position: fixed;
+    z-index: 3;
+    width: -webkit-fill-available;
   }
   
   .logo h2 {

@@ -1,5 +1,6 @@
 // src/pages/Home.js
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Home.css"; // Importar CSS
 import About from "./About";
 import Contact from "./Contact";
@@ -9,14 +10,36 @@ import News from "./News";
 import Subscription from "./Subscription";
 
 function Home() {
+  const navigate = useNavigate();
+  const [hideHeader, setHideHeader] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Si el scroll es mayor a 10 px, escondemos header
+      if (window.scrollY > 10) {
+        setHideHeader(true);
+      } else {
+        setHideHeader(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+  
   return (
     <div>
         {/* Sección de bienvenida */}
-        <header className="home-header">
+        <header className={`home-header ${hideHeader ? "no-visible" : ""}`}>
             <div className="home-header-content">
                 <h1>Bienvenidos a la Compañía de Danza</h1>
                 <p>Descubre nuestra pasión por el arte y la expresión corporal</p>
-                <button className="subscribe-btn">Suscribirse</button>
+                <button
+                  className="subscribe-btn"
+                  onClick={() => navigate("/subscription")}
+                >
+                  Suscribirse
+                </button>
             </div>
         </header>
 
@@ -40,13 +63,11 @@ function Home() {
 
       {/* Noticias */}
       <section className="home-section-alt" id="news">
-        <h2>Noticias y Eventos</h2>
         <News />
       </section>
 
       {/* Suscripción */}
       <section className="home-section" id="subscription">
-        <h2>Suscríbete y apoya la danza</h2>
         <Subscription />
       </section>
 

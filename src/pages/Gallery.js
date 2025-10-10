@@ -13,7 +13,7 @@ function Gallery() {
   const [selectedImage, setSelectedImage] = useState(null);
 
   return (
-    <div>
+    <div className="content-gallery">
       <div className="gallery-grid">
         {images.map((img, index) => (
           <div key={index} className="gallery-item" onClick={() => setSelectedImage(img)}>
