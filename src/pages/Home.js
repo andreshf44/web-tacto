@@ -32,7 +32,7 @@ function Home() {
         {/* Sección de bienvenida */}
         <header className={`home-header ${hideHeader ? "no-visible" : ""}`}>
             <div className="home-header-content">
-                <h1>Bienvenidos a la Compañía de Danza</h1>
+                <h1>Bienvenidos a Tacto Sur</h1>
                 <p>Descubre nuestra pasión por el arte y la expresión corporal</p>
                 <button
                   className="subscribe-btn"
@@ -45,7 +45,6 @@ function Home() {
 
         {/* Misión y Visión */}
       <section className="home-section" id="about">
-        <h2>¿Quienes somos?</h2>
         <About />
       </section>
 
