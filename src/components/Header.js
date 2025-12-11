@@ -13,7 +13,7 @@ function Header() {
         <Link to="/">Inicio</Link>
         <Link to="/about">Sobre Nosotros</Link>
         <Link to="/gallery">Galería</Link>
-        <Link to="/news">Noticias</Link>
+        <Link to="/news">Eventos</Link>
         <Link to="/team">Equipo</Link>
         <Link to="/subscription">Suscripción</Link>
         <Link to="/contact">Contacto</Link>

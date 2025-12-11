@@ -4,7 +4,7 @@ import React from "react";
 function Subscription() {
   const handleSubscribe = () => {
     // Redirige a la URL deseada
-    window.location.href = "https://www.mercadopago.cl/subscriptions/checkout?preapproval_plan_id=64a81512d1bc47f4a11e26d7907e6cae";
+    window.location.href = "https://www.mercadopago.cl/subscriptions/checkout?preapproval_plan_id=08e9c5175b3548cc95109671b16cdfa1";
   };
 
   return (
