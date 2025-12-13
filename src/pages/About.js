@@ -2,12 +2,24 @@
 import React from "react";
 
 export default function About() {
+  
   return (
     <div className="about-page">
 
       {/* Hero / Intro */}
       <section className="about-hero">
-      <h2>¿Quienes somos?</h2>
+        <div className="about-hero-header">
+          <h2>¿Quiénes somos?</h2>
+
+          <a
+            href="/quienes-somos.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="pdf-link"
+          >
+            Ver PDF
+          </a>
+        </div>
         <p>
           Somos <span>un equipo multidisciplinario de artistas, gestores y productores independientes</span> basado 
           en Río Bueno y La Unión, Región de los Ríos, enfocados en las artes escénicas contemporáneas como eje 
