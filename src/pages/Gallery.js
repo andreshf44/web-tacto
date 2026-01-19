@@ -1,6 +1,7 @@
 // src/pages/Gallery.js
 
 import React, { useState, useEffect } from "react";
+import albumsInfo from "../assets/albums/albumsInfo";
 
 /* -------------------------------------------------------
    CARGA AUTOMÁTICA DE TODAS LAS IMÁGENES (Webpack / CRA)
@@ -23,7 +24,11 @@ function loadAlbums() {
 
     if (!albums[folderName]) {
       albums[folderName] = {
-        name: folderName.replace(/_/g, " "),
+        name:
+          albumsInfo[folderName]?.name ||
+          folderName.replace(/_/g, " "),
+        description:
+          albumsInfo[folderName]?.description || "",
         images: []
       };
     }
@@ -109,7 +114,8 @@ function Gallery() {
             }}
           >
             <img src={album.cover} alt={album.name} />
-            <p>{album.name}</p>
+            <h3>{album.name}</h3>
+            <p>{album.description}</p>
           </div>
         ))}
       </div>

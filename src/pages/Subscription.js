@@ -72,7 +72,7 @@ function Subscription() {
               los Amigxs de Tacto para una mayor transparencia en la distribución de fondos.
             </p>
 
-            <h4>Beneficios</h4>
+            <h3>Beneficios</h3>
             <ul>
               <li><strong>Descuentos y promociones especiales en todas nuestras actividades:</strong> 
                 Estrenos de obras, instalaciones, conciertos, exposiciones, festivales, lanzamientos audiovisuales, 

@@ -8,6 +8,47 @@
 }
 
 /* Sección de bienvenida con imagen de fondo */
+.intro-video-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro-video-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.intro-video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.close-video {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+
+
+
+
 .home-header {
   width: -webkit-fill-available;
   position: absolute;
@@ -45,6 +86,7 @@
     position: relative;
     z-index: 2; /* para que esté por encima del overlay */
     max-width: 500px;
+    top: 130px;
 }
 
 /* Botón de suscripción */
@@ -142,14 +184,12 @@
   color: #665151;
   font-size: 1.1em;
 }
-
-.about-block p span{
-  text-decoration: underline;
+.about-block .subtitle{
+  font-size: 1.2em;
 }
-.about-block.vision p span{
+.about-block p span{
   font-weight: 600;
   color: #483636;
-  text-decoration: none;
 }
 
 /*--------------pdf--------------*/
@@ -197,10 +237,6 @@
   cursor: pointer;
   border-radius: 10px;
   transition: transform 0.3s;
-}
-
-.gallery-item p{
-  text-transform: capitalize;
 }
 
 .gallery-item img:hover {
@@ -682,6 +718,11 @@
 
   .info-suscripcion{
     width: 80%;
+    color: #665151;
+    margin: auto;
+    h3, strong{
+      color: #483636;
+    }
   }
 
   .subscription-title {
@@ -751,9 +792,24 @@
     z-index: 5;
     .modal-content{
       background: #fff;
-      width: 80%;
+      width: 50%;
       height: 84%;
+      padding: 25px;
       margin: auto;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      .modal-close{
+        position: absolute;
+        right: 24%;
+        top: 5%;
+        border: none;
+        background: none;
+        font-size: 20px;
+        cursor: pointer;
+      }
+      .modal-close:hover{
+        color:#665151;
+      }
     }
   }
   
