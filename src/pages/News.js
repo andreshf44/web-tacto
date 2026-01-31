@@ -84,15 +84,15 @@ const newsItems = [
 function News() {
   const [selectedEvent, setSelectedEvent] = useState(null);
   //const [selectedNews, setSelectedNews] = useState(null);
-  const [, setCurrentSlide] = useState(0);
+  //const [currentSlide, setCurrentSlide] = useState(0);
 
   // Cambio automático cada 5 segundos
-  useEffect(() => {
+  /*useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % newsItems.length);
     }, 5000);
     return () => clearInterval(interval);
-  }, []);
+  }, []);*/
 
   return (
     <div className="news-events-container">

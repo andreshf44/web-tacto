@@ -131,6 +131,7 @@ function Gallery() {
                 <img
                   key={idx}
                   src={img}
+                  alt=""
                   className="album-thumb"
                   onClick={() => setSelectedImageIndex(idx)}
                 />
