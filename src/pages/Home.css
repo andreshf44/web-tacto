@@ -228,6 +228,12 @@
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
   padding: 20px;
+  padding-top: 90px;
+}
+.home-section-alt {
+  .gallery-grid {
+    padding-top: 20px;
+  }
 }
 
 .gallery-item img {
