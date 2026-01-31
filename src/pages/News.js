@@ -4,9 +4,9 @@ import event1 from "../assets/albums/soñe_que_volaba/Sone_que_volaba-25.jpg";
 import event2 from "../assets/albums/amatista/13.jpg";
 import event3 from "../assets/albums/psique/5.JPEG";
 import event4 from "../assets/albums/soñe_que_volaba/Sone_que_volaba-69.jpg";
-import news1 from "../assets/news1.jpg";
+/*import news1 from "../assets/news1.jpg";
 import news2 from "../assets/news2.jpg";
-import news3 from "../assets/news3.jpg";
+import news3 from "../assets/news3.jpg";*/
 
 const eventsItems = [
   {
