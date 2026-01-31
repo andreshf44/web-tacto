@@ -1,5 +1,5 @@
 // src/components/News.js
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import event1 from "../assets/albums/soñe_que_volaba/Sone_que_volaba-25.jpg";
 import event2 from "../assets/albums/amatista/13.jpg";
 import event3 from "../assets/albums/psique/5.JPEG";
@@ -60,7 +60,7 @@ const eventsItems = [
   },
 ];
 
-const newsItems = [
+/*const newsItems = [
   {
     title: "Noticia 1: Gala de fin de año",
     img: news1,
@@ -79,7 +79,7 @@ const newsItems = [
     short: "Se abren inscripciones para becas a jóvenes talentos.",
     full: "Texto completo de la noticia 3 con requisitos, fechas de inscripción y contacto para postular.",
   },
-];
+];*/
 
 function News() {
   const [selectedEvent, setSelectedEvent] = useState(null);
