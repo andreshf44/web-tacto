@@ -29,7 +29,7 @@ export default function About() {
         coreógrafos, artistas visuales y profesionales de las áreas de iluminación, tecnología escénica, vestuario, 
         diseño escénico y diseño gráfico. Esta diversidad de disciplinas nos permite abordar proyectos de <span>
         contemporáneo regional arte </span>y otras expresiones escénicas con una mirada integral.
-        Nuestro equipo cuenta con una amplia trayectoria artística y experiencia en <span>gestión cultural regional,</span> 
+        Nuestro equipo cuenta con una amplia trayectoria artística y experiencia en <span>gestión cultural regional, </span> 
         lo que nos ha permitido desarrollar y consolidar en la <span>Región de Los Ríos</span> proyectos como la Compañía
         Profesional de Danza Contemporánea Tacto Sur, la Agrupación Cultural Aylin Kürrüf y Jardines Humanos Academia 
         de Música, contribuyendo al fortalecimiento de la <span>cultura independiente del sur de Chile.</span>
@@ -39,12 +39,12 @@ export default function About() {
       {/* Misión y Visión */}
       <section className="about-content">
         <div className="about-block">
-          <h2>¿Qué hacemos? (misión)</h2>
+          <h2>¿Qué hacemos?</h2>
           <p>
           Somos una <span>plataforma cultural independiente</span> dedicada al desarrollo, circulación y fortalecimiento de las 
-          <span>artes escénicas contemporáneas en la Región de Los Ríos,</span> con especial énfasis en la promoción de la 
-          <span>cultura independiente del sur de Chile.</span> Nuestro trabajo se fundamenta en prácticas de 
-          <span>gestión cultural independiente y local,</span> orientadas al acceso, la formación y la profesionalización del sector artístico.<br/><br/>
+          <span> artes escénicas contemporáneas en la Región de Los Ríos,</span> con especial énfasis en la promoción de la 
+          <span> cultura independiente del sur de Chile.</span> Nuestro trabajo se fundamenta en prácticas de 
+          <span> gestión cultural independiente y local,</span> orientadas al acceso, la formación y la profesionalización del sector artístico.<br/><br/>
 
           Nuestras proyecciones de trabajo se estructuran en tres ejes estratégicos:<br/><br/>
 
@@ -58,9 +58,9 @@ export default function About() {
 
           <span className="subtitle">2. Difusión y circulación de obras</span><br/><br/>
           Impulsamos la circulación de obras y repertorios propios y asociados, mediante itinerancias regionales, 
-          nacionales e internacionales.<span>Como compañía de danza contemporánea en Los Ríos,</span> desarrollamos 
-          <span>proyectos de artes escénicas en Río Bueno</span> y otras comunas del territorio, contribuyendo al 
-          <span>apoyo a artistas independientes en Chile</span> y a la descentralización del acceso a las artes.<br/><br/>
+          nacionales e internacionales.<span> Como compañía de danza contemporánea en Los Ríos,</span> desarrollamos 
+          <span> proyectos de artes escénicas en Río Bueno</span> y otras comunas del territorio, contribuyendo al 
+          <span> apoyo a artistas independientes en Chile</span> y a la descentralización del acceso a las artes.<br/><br/>
 
           Actualmente, gestionamos giras internacionales para el año 2026 en Ecuador y México, como parte de una 
           estrategia de internacionalización y <span>financiamiento cultural independiente.</span><br/><br/>
@@ -77,7 +77,7 @@ export default function About() {
         </div>
 
         <div className="about-block vision">
-          <h2>Proyección (Visión)</h2>
+          <h2>Proyección</h2>
           <p>
           Aspiramos a consolidarnos como una <span>plataforma cultural independiente</span> y una <span>compañía de 
           artes escénicas integradas en Chile</span> referente en el desarrollo cultural <span>en la Región de Los Ríos,</span>

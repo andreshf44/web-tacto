@@ -43,6 +43,7 @@ function Home() {
           <div className="intro-video-overlay">
             <div className="intro-video-container">
       
+            <h1 class="neon">PLATAFORMA TACTO SUR</h1>
               <button className="close-video" onClick={() => setShowIntroVideo(false)}>
                 ✕
               </button>

@@ -7,7 +7,7 @@ function Header() {
   return (
     <header className="site-header">
       <div className="logo">
-        <h2>Compañía Tacto Sur</h2>
+        <h2>Plataforma Tacto Sur</h2>
       </div>
       <nav className="nav-links">
         <Link to="/">Inicio</Link>

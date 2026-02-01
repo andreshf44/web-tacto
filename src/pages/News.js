@@ -1,29 +1,43 @@
 // src/components/News.js
 import React, { useState} from "react";
-import event1 from "../assets/albums/soñe_que_volaba/Sone_que_volaba-25.jpg";
-import event2 from "../assets/albums/amatista/13.jpg";
-import event3 from "../assets/albums/psique/5.JPEG";
-import event4 from "../assets/albums/soñe_que_volaba/Sone_que_volaba-69.jpg";
+import event1 from "../assets/albums/arrebato_electronico/PORTADA.jpg";
+import event2 from "../assets/albums/amatista/PORTADA.JPEG";
+//import event3 from "../assets/albums/psique/5.JPEG";
+import event4 from "../assets/albums/soñe_que_volaba/PORTADA.jpg";
 /*import news1 from "../assets/news1.jpg";
 import news2 from "../assets/news2.jpg";
 import news3 from "../assets/news3.jpg";*/
 
 const eventsItems = [
   {
+    title: "SOÑÉ QUE VOLABA",
+    date: "Sábado 21 Febrero 2026",
+    place: "El Galpón, Frutillar.",
+    img: event4,
+    description: "El Galpón, Frutillar.",
+  },
+  {
+    title: "AMATISTA",
+    date: "Domingo 22 de Febrero 2026",
+    place: "El Galpón, Frutillar.",
+    img: event2,
+    description: "El Galpón, Frutillar.",
+  },
+  {
     title: "ARREBATO DOMÉSTICO",
-    date: "Viernes 10 Enero 2026",
-    place: "Sede Junta de Vecinos Irene Daiber, La Unión.",
+    date: "Sábado 28 de Febrero 2026",
+    place: "Sede Junta de Vecinos Irene Daiber, La Unión",
     img: event1,
     description: "Sede Junta de Vecinos Irene Daiber, La Unión.",
   },
   {
     title: "ARREBATO DOMÉSTICO",
-    date: "Sábado 11 Enero 2026",
+    date: "Domingo 1 de Marzo 2026",
     place: "Club Deportivo Barrabases, Río Bueno.",
     img: event1,
     description: "Club Deportivo Barrabases, Río Bueno.",
   },
-  {
+  /*{
     title: "AMATISTA",
     date: "Viernes 16 Enero 2026",
     place: "Auditorio Santiago Santana, Paillaco.",
@@ -50,14 +64,8 @@ const eventsItems = [
     place: " Espacio En Construcción, Valdivia.",
     img: event3,
     description: " Espacio En Construcción, Valdivia.",
-  },
-  {
-    title: "SOÑÉ QUE VOLABA",
-    date: "Sábado 21 & Domingo 22 Febrero 2026",
-    place: "El Galpón, Frutillar.",
-    img: event4,
-    description: "El Galpón, Frutillar.",
-  },
+  },*/
+  
 ];
 
 /*const newsItems = [
