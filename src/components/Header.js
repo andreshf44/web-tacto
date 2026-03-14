@@ -1,23 +1,49 @@
 // src/components/Header.js
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
 
 function Header() {
+
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <header className="site-header">
+
       <div className="logo">
         <h2>Plataforma Tacto Sur</h2>
       </div>
-      <nav className="nav-links">
-        <Link to="/">Inicio</Link>
-        <Link to="/about">Sobre Nosotros</Link>
-        <Link to="/gallery">Galería</Link>
-        <Link to="/news">Eventos</Link>
-        <Link to="/team">Equipo</Link>
-        <Link to="/subscription">Suscripción</Link>
-        <Link to="/contact">Contacto</Link>
+
+      {/* botón hamburguesa */}
+      <div 
+        className={`hamburger ${menuOpen ? "active" : ""}`} 
+        onClick={toggleMenu}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <nav className={`nav-links ${menuOpen ? "active" : ""}`}>
+
+        <Link to="/" onClick={closeMenu}>Inicio</Link>
+        <Link to="/about" onClick={closeMenu}>Sobre Nosotros</Link>
+        <Link to="/gallery" onClick={closeMenu}>Galería</Link>
+        <Link to="/news" onClick={closeMenu}>Eventos</Link>
+        <Link to="/team" onClick={closeMenu}>Equipo</Link>
+        <Link to="/subscription" onClick={closeMenu}>Suscripción</Link>
+        <Link to="/contact" onClick={closeMenu}>Contacto</Link>
+
       </nav>
+
     </header>
   );
 }

@@ -63,6 +63,7 @@ const albums = loadAlbums();
 function Gallery() {
   const [selectedAlbum, setSelectedAlbum] = useState(null);
   const [selectedImageIndex, setSelectedImageIndex] = useState(null);
+  const [openInfoIndex, setOpenInfoIndex] = useState(null);
 
   /* ---------------------------------------------
      Navegación global con teclado
@@ -115,7 +116,19 @@ function Gallery() {
           >
             <img src={album.cover} alt={album.name} />
             <h3>{album.name}</h3>
-            <p>{album.description}</p>
+            <div
+              className="read-more"
+              onClick={(e) => {
+              e.stopPropagation();
+              setOpenInfoIndex(openInfoIndex === index ? null : index);
+              }}
+            >
+              {openInfoIndex === index ? "− Ocultar información" : "+ Saber más"}
+            </div>
+
+            {openInfoIndex === index && (
+              <p className="album-description">{album.description}</p>
+            )}
           </div>
         ))}
       </div>

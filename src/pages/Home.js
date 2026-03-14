@@ -61,7 +61,7 @@ function Home() {
         {/* Sección de bienvenida */}
         <header className={`home-header ${hideHeader ? "no-visible" : ""}`}>
             <div className="home-header-content">
-                <h1>Bienvenidos a Tacto Sur</h1>
+                <h1>Bienvenidos</h1>
                 <p>Somos una plataforma cultural independiente y compañía de artes escénicas contemporáneas con base
                    en Río Bueno y La Unión, en la Región de Los Ríos. Desde el sur de Chile, desarrollamos danza 
                    contemporánea, performance, música, diseño gráfico y audiovisual desde una mirada territorial, 
