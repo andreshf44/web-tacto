@@ -957,13 +957,13 @@
 @media (max-width: 768px) {
   .home-header{
     position: inherit;
-    height: 65vh;
+    height: 95vh;
   }
   .home-header.no-visible{
     opacity: 1;
   }
   .home-header::before{
-    height: 74vh;
+    height: 100vh;
   }
   .home-header-content {
     max-width: 100%;
