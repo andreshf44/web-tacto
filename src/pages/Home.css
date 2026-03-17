@@ -955,6 +955,25 @@
 /* 📱 modo móvil */
 
 @media (max-width: 768px) {
+  .home-header{
+    position: inherit;
+    height: 65vh;
+  }
+  .home-header.no-visible{
+    opacity: 1;
+  }
+  .home-header::before{
+    height: 74vh;
+  }
+  .home-header-content {
+    max-width: 100%;
+  }
+  .home-section#about {
+    margin-top: 0;
+  }
+  
+  
+  
   /*Sobre nosotros*/
   .about-hero {
     padding: 0rem;
@@ -1021,7 +1040,7 @@
   .team-bio {
     overflow: auto;
     padding: 8px;
-    max-height: 30vh;
+    max-height: 25vh;
   }
   .team-modal-content {
     max-width: 75%;
