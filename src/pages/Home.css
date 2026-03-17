@@ -321,9 +321,12 @@
 }
 
 .modal img {
-  max-width: 90%;
-  max-height: 90%;
+  max-width: 100%;
+  max-height: 100%;
   border-radius: 10px;
+}
+.modal img.large-image{
+  max-width: 90%;
 }
 
 /* --- MODAL DE ÁLBUM (contenedor) --- */
@@ -459,6 +462,9 @@
 }
 
 .team-bio h3 {
+  margin: 0;
+}
+.team-bio p{
   margin-top: 0;
 }
 
@@ -917,7 +923,7 @@
   
   .contact-form input,
   .contact-form textarea {
-    width: 100%;
+    width: -webkit-fill-available;
     padding: 12px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
@@ -945,18 +951,42 @@
     font-weight: bold;
   }
 
+
+/* 📱 modo móvil */
+
 @media (max-width: 768px) {
+  /*Sobre nosotros*/
+  .about-hero {
+    padding: 0rem;
+  }
+  .about-hero-header {
+    width: 90%;
+    justify-content: space-between;
+  }
+  .about-hero p {
+    max-width: 90%;
+    padding-bottom: 20px;
+  }
+  .about-content {
+    padding: 0rem;
+  }
+  .about-block {
+    padding: 0 30px;
+    border-radius: 0;
+  }
+  
+  /*Galleria*/
   .gallery-grid{
     grid-template-columns: repeat(1, 1fr);
   }
   .gallery-item .album-description {
-    width: 78%;
+    width: auto;
   }
   .team-modal {
     padding: 0;
   }
   .team-modal-content {
-    max-width: 90%;
+    max-width: 65%;
     flex-direction: column;
   }
   .team-modal-content img {
@@ -970,5 +1000,82 @@
   }  
   .close-video {
     right: 6px;
+  }
+}
+
+@media (max-width: 470px){
+  .home-header {
+    padding: 25px 20px;
+  }
+
+  /*Sobre nosotros*/
+  .home-section#about {
+    margin-top: 40px;
+  }
+  .home-section {
+    padding: 11px;
+  }
+  .about-block {
+    padding: 0px 20px;
+  }
+  .team-bio {
+    overflow: auto;
+    padding: 8px;
+    max-height: 30vh;
+  }
+  .team-modal-content {
+    max-width: 75%;
+  }
+
+  /*Galería*/
+  .home-section-alt {
+    padding: 20px;
+  }
+  .album-modal {
+    width: 80%;
+  }
+
+  /*Nuestro equipo*/
+  .home-section#team {
+    h2{
+      padding-left: 11px;
+    }
+  }
+
+  /*Eventos*/
+  .events-modal {
+    padding: 0;
+  }
+  .events-modal-content {
+    flex-direction: column;
+  }
+  .events-modal-content img {
+    max-width: 370px;
+  }
+}
+
+@media (max-width: 390px){
+  .home-header-content {
+    h1 {
+      font-size: 20px;
+    }
+  }
+  .home-header-content {
+    p {
+      font-size: 14px;
+    }
+  }
+  .home-header .subscribe-btn {
+    margin-top: 5px;
+    font-size: 16px;
+  }
+  .team-bio {
+    max-height: 18vh;
+  }
+  .events-modal-content{
+    max-width: 290px;
+  }
+  .events-modal-content img {
+    max-width: 290px;
   }
 }
