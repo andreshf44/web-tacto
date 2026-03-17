@@ -954,7 +954,7 @@
 
 /* 📱 modo móvil */
 
-@media (max-width: 768px) {
+@media (max-width: 768px) and (orientation: portrait){
   .home-header{
     position: inherit;
     height: 95vh;
@@ -1021,8 +1021,7 @@
     right: 6px;
   }
 }
-
-@media (max-width: 470px){
+@media (max-width: 470px) and (orientation: portrait){
   .home-header {
     padding: 25px 20px;
   }
@@ -1072,8 +1071,7 @@
     max-width: 370px;
   }
 }
-
-@media (max-width: 390px){
+@media (max-width: 390px) and (orientation: portrait){
   .home-header-content {
     h1 {
       font-size: 20px;
@@ -1096,5 +1094,37 @@
   }
   .events-modal-content img {
     max-width: 290px;
+  }
+}
+
+@media (max-width: 940px) and (orientation: landscape){
+  .home-header{
+    height: 130vh;
+    position: inherit;
+  }
+  .home-header.no-visible{
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  .home-header-content{
+    p {
+      font-size: 16px;
+    }
+  }
+  .home-section#about {
+    margin-top: 0;
+  }
+  .team-modal-content img {
+    max-width: 200px;
+  }
+  .events-modal-content img {
+    max-width: 230px;
+  }
+  .gallery-grid {
+    display: flex;
+    flex-direction: column;
+  }
+  .album-description{
+    width: 85% !important;
   }
 }
