@@ -99,11 +99,11 @@ function Home() {
         <Team />
       </section>
 
-      {/* Noticias */}
+      {/* Noticias 
       <section className="home-section-alt" id="news">
         <News />
       </section>
-
+      */}
       {/* Suscripción */}
       <section className="home-section" id="subscription">
         <Subscription />

@@ -39,7 +39,7 @@ export default function Contact() {
             ¿Tienes preguntas o quieres más información sobre nuestras clases y
             presentaciones? Escríbenos y te responderemos a la brevedad.
           </p>
-          <p><strong>Email:</strong> rominapaz.ap@gmail.com</p>
+          <p><strong>Email:</strong> tactosur@gmail.com</p>
           <p><strong>Teléfono:</strong> +56 9 61083706</p>
         </div>
 

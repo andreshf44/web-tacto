@@ -37,7 +37,7 @@ function Header() {
         <Link to="/" onClick={closeMenu}>Inicio</Link>
         <Link to="/about" onClick={closeMenu}>Sobre Nosotros</Link>
         <Link to="/gallery" onClick={closeMenu}>Galería</Link>
-        <Link to="/news" onClick={closeMenu}>Eventos</Link>
+       {/*<Link to="/news" onClick={closeMenu}>Eventos</Link> */} 
         <Link to="/team" onClick={closeMenu}>Equipo</Link>
         <Link to="/subscription" onClick={closeMenu}>Suscripción</Link>
         <Link to="/contact" onClick={closeMenu}>Contacto</Link>

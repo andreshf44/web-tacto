@@ -1114,6 +1114,13 @@
   .home-section#about {
     margin-top: 0;
   }
+  .team-modal{
+    padding: 0;
+  }
+  .team-modal-content{
+    max-width: 80%;
+    max-height: 85%;
+  }
   .team-modal-content img {
     max-width: 200px;
   }
