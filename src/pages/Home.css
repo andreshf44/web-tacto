@@ -874,6 +874,7 @@
       background: #fff;
       width: 50%;
       height: 84%;
+      overflow: auto;
       padding: 25px;
       margin: auto;
       border-radius: 16px;
@@ -1020,6 +1021,19 @@
   .close-video {
     right: 6px;
   }
+
+  /*Suscripcion*/
+  .modal-overlay {
+    .modal-content {
+      width: 80%;
+      height: 90%;
+      .modal-close {
+        right: 60px;
+        top: 40px;
+      }
+    }
+  }
+
 }
 @media (max-width: 470px) and (orientation: portrait){
   .home-header {
@@ -1069,6 +1083,16 @@
   }
   .events-modal-content img {
     max-width: 370px;
+  }
+
+  /*Suscripcion*/
+  .modal-overlay {
+    .modal-content {
+      .modal-close {
+        right: 30px;
+        top: 30px;
+      }
+    }
   }
 }
 @media (max-width: 390px) and (orientation: portrait){

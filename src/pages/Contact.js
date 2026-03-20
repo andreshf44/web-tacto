@@ -16,7 +16,7 @@ export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const companyPhone = "56 9 61083706"; // número de la compañía con código de país
+    const companyPhone = " 56 9 5617 2155"; // número de la compañía con código de país
     const text = `Hola, soy ${formData.name}.\nCorreo: ${formData.email}\nAsunto: ${formData.subject}\nMensaje: ${formData.message}`;
 
     // Codificar el mensaje para la URL
@@ -40,7 +40,7 @@ export default function Contact() {
             presentaciones? Escríbenos y te responderemos a la brevedad.
           </p>
           <p><strong>Email:</strong> tactosur@gmail.com</p>
-          <p><strong>Teléfono:</strong> +56 9 61083706</p>
+          <p><strong>Teléfono:</strong>+56 9 5617 2155</p>
         </div>
 
         <div className="contact-form-container">

@@ -18,7 +18,7 @@
     padding:15px 30px;
     background:white;
     position:fixed;
-    z-index:1000;
+    z-index:4;
     width: -webkit-fill-available;
   }
   
