@@ -72,7 +72,6 @@ function Gallery() {
   const [selectedImageIndex, setSelectedImageIndex] = useState(null);
 
   const isProjectOpen = selectedAlbum !== null;
-  const isImageOpen = selectedImageIndex !== null;
 
   const closeAlbum = () => {
     setSelectedAlbum(null);
