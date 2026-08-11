@@ -1,7 +1,6 @@
 // src/pages/Home.js
 
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import "./Home.css";
 import About from "./About";
 import Contact from "./Contact";
@@ -10,7 +9,6 @@ import Team from "./Team";
 import Subscription from "./Subscription";
 
 function Home() {
-  const navigate = useNavigate();
 
   const scrollToSection = (sectionId) => {
     document

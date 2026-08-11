@@ -102,25 +102,33 @@ function Gallery() {
 
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if (isImageOpen) {
-        if (e.key === "ArrowRight") nextImage();
-        if (e.key === "ArrowLeft") prevImage();
-        if (e.key === "Escape") closeImage();
-
-        return;
-      }
-
-      if (isProjectOpen && e.key === "Escape") {
-        closeAlbum();
+      if (selectedImageIndex !== null && selectedAlbum) {
+        if (e.key === "ArrowRight") {
+          setSelectedImageIndex((prev) =>
+            prev < selectedAlbum.images.length - 1 ? prev + 1 : 0
+          );
+        }
+  
+        if (e.key === "ArrowLeft") {
+          setSelectedImageIndex((prev) =>
+            prev > 0 ? prev - 1 : selectedAlbum.images.length - 1
+          );
+        }
+  
+        if (e.key === "Escape") {
+          setSelectedImageIndex(null);
+        }
+      } else if (selectedAlbum && e.key === "Escape") {
+        setSelectedAlbum(null);
       }
     };
-
+  
     window.addEventListener("keydown", handleKeyDown);
-
+  
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [isProjectOpen, isImageOpen, selectedImageIndex, selectedAlbum]);
+  }, [selectedAlbum, selectedImageIndex]);
 
   useEffect(() => {
     document.body.style.overflow =
