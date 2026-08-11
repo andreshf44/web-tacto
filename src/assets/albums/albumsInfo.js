@@ -15,7 +15,7 @@ const albumsInfo = {
         "Una puesta en escena que aborda la temática del olvido, la herida y la existencia como especie. En 5 escenas, 6 intérpretes deambulan sin memoria, sin territorio, en el espacio vacío. Buscan relacionarse e interactuar, intentando encontrar el sentido de sí mismos a través del otro; son realidades sueltas y aleatorias, las que en conjunto divagan en búsqueda de un sentido común efímero, el cual ellos mismos desordenan después. El olvido de sí mismos, del otro, del sitio; la herida como motivo de acción y movimiento. Es una obra que entrelaza la danza contemporánea en diálogo con la iluminación, la música, el diseño escénico y el vestuario para crear una atmósfera imaginando el Alzheimer, la herida que busca sanarse."
     },
     arrebato_electronico:{
-      name:"Arrebato Electónico",
+      name:"Arrebato Electrónico",
       description:
         "ARREBATO ELECTRÓNICO es una propuesta escénica multidisciplinaria de danza, música, circo, performance y artes visuales. Los personajes intervienen en el espacio con diferentes performances que buscan interactuar con el espectador de manera provocativa y sensual con el fin de alterar las hormonas e ir calentando el ambiente. Un viaje 100% sensorial e immersivo donde él expectador podrá dejarse llevar por este viaje que explora el sistema endocrino y la liberación hormonal como motor de acción, movimiento y estética integral de la propuesta."
     },

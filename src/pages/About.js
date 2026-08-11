@@ -1,103 +1,145 @@
 // src/pages/About.js
+
 import React from "react";
 
 export default function About() {
-  
-  return (
-    <div className="about-page">
+  const ejes = [
+    {
+      number: "01",
+      title: "Creación de audiencias",
+      description:
+        "Desarrollamos acciones sostenidas de mediación y programación para formar públicos en artes escénicas en el sur de Chile, trabajando en espacios convencionales y no convencionales junto a comunidades locales.",
+    },
+    {
+      number: "02",
+      title: "Difusión y circulación",
+      description:
+        "Impulsamos obras y repertorios propios y asociados mediante itinerancias regionales, nacionales e internacionales, fortaleciendo la descentralización y la proyección de artistas independientes.",
+    },
+    {
+      number: "03",
+      title: "Formación",
+      description:
+        "Diseñamos seminarios, residencias y programas de formación para niñas, niños, jóvenes y personas adultas, promoviendo procesos de educación artística y creación interdisciplinaria.",
+    },
+  ];
 
-      {/* Hero / Intro */}
-      <section className="about-hero">
-        <div className="about-hero-header">
-          <h2>¿Quiénes somos?</h2>
+  return (
+    <main className="about-page">
+      {/* MANIFIESTO */}
+      <section className="about-manifesto">
+        <div className="about-manifesto__label">
+          <span>01</span>
+          <p>PLATAFORMA</p>
+        </div>
+
+        <div className="about-manifesto__content">
+          <p className="about-eyebrow">¿Quiénes somos?</p>
+
+          <h1>
+            No observamos
+            <br />
+            el territorio.
+            <br />
+            <span>Creamos desde él.</span>
+          </h1>
+
+          <div className="about-manifesto__body">
+            <p>
+              Somos un equipo multidisciplinario de artistas, gestores y
+              productores independientes con base en Río Bueno y La Unión,
+              Región de Los Ríos.
+            </p>
+
+            <p>
+              Trabajamos desde las artes escénicas contemporáneas como un
+              espacio de investigación, creación y producción artística desde
+              una perspectiva territorial, colaborativa y descentralizada.
+            </p>
+          </div>
 
           <a
             href="/quienes-somos.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="pdf-link"
+            className="about-pdf"
           >
-            Ver PDF
+            Leer presentación completa ↗
           </a>
         </div>
-        <p>
-        Somos un equipo multidisciplinario de artistas, gestores y productores independientes, con base en Río Bueno
-        y La Unión, en la <span>Región de Los Ríos.</span> Nuestro trabajo se centra en el desarrollo de las <span>
-        artes escénicas contemporáneas, </span>entendidas como eje principal de investigación, creación y producción
-        artística desde una perspectiva territorial y colaborativa.
-        Funcionamos como una <span>compañía artística multidisciplinaria,</span> integrada por músicos, bailarines, 
-        coreógrafos, artistas visuales y profesionales de las áreas de iluminación, tecnología escénica, vestuario, 
-        diseño escénico y diseño gráfico. Esta diversidad de disciplinas nos permite abordar proyectos de <span>
-        contemporáneo regional arte </span>y otras expresiones escénicas con una mirada integral.
-        Nuestro equipo cuenta con una amplia trayectoria artística y experiencia en <span>gestión cultural regional, </span> 
-        lo que nos ha permitido desarrollar y consolidar en la <span>Región de Los Ríos</span> proyectos como la Compañía
-        Profesional de Danza Contemporánea Tacto Sur, la Agrupación Cultural Aylin Kürrüf y Jardines Humanos Academia 
-        de Música, contribuyendo al fortalecimiento de la <span>cultura independiente del sur de Chile.</span>
-        </p>
+
+        <div className="about-manifesto__keywords">
+          <span>CUERPO</span>
+          <span>TERRITORIO</span>
+          <span>COLABORACIÓN</span>
+        </div>
       </section>
 
-      {/* Misión y Visión */}
-      <section className="about-content">
-        <div className="about-block">
-          <h2>¿Qué hacemos?</h2>
-          <p>
-          Somos una <span>plataforma cultural independiente</span> dedicada al desarrollo, circulación y fortalecimiento de las 
-          <span> artes escénicas contemporáneas en la Región de Los Ríos,</span> con especial énfasis en la promoción de la 
-          <span> cultura independiente del sur de Chile.</span> Nuestro trabajo se fundamenta en prácticas de 
-          <span> gestión cultural independiente y local,</span> orientadas al acceso, la formación y la profesionalización del sector artístico.<br/><br/>
+      {/* QUÉ HACEMOS */}
+      <section className="about-work">
+        <div className="about-work__header">
+          <div>
+            <p className="about-eyebrow">Nuestra práctica</p>
 
-          Nuestras proyecciones de trabajo se estructuran en tres ejes estratégicos:<br/><br/>
+            <h2>
+              ¿Qué
+              <br />
+              <span>hacemos?</span>
+            </h2>
+          </div>
 
-          <span className="subtitle">1. Creación de audiencias</span><br/><br/>
-          Desarrollamos acciones sostenidas de mediación y programación para la formación de públicos en <span>
-          artes escénicas en el sur de Chile,</span> ofreciendo una cartelera permanente regional de danza, 
-          video danza, performance, música, artes visuales, exposiciones interactivas y residencias de composición. 
-          Estas actividades se realizan en espacios convencionales y no convencionales, fortaleciendo los <span>
-          proyectos culturales en la Región de Los Ríos</span> y promoviendo la participación activa de comunidades 
-          locales.<br/><br/>
-
-          <span className="subtitle">2. Difusión y circulación de obras</span><br/><br/>
-          Impulsamos la circulación de obras y repertorios propios y asociados, mediante itinerancias regionales, 
-          nacionales e internacionales.<span> Como compañía de danza contemporánea en Los Ríos,</span> desarrollamos 
-          <span> proyectos de artes escénicas en Río Bueno</span> y otras comunas del territorio, contribuyendo al 
-          <span> apoyo a artistas independientes en Chile</span> y a la descentralización del acceso a las artes.<br/><br/>
-
-          Actualmente, gestionamos giras internacionales para el año 2026 en Ecuador y México, como parte de una 
-          estrategia de internacionalización y <span>financiamiento cultural independiente.</span><br/><br/>
-
-          <span className="subtitle">3. Formación</span><br/><br/>
-          Diseñamos e implementamos seminarios, residencias artísticas y programas de formación para niñas, niños, 
-          jóvenes y personas adultas, enfocados en el desarrollo de las <span>artes interdisciplinarias contemporáneas
-          a nivel regional.</span><br/><br/>  
-          Nos encontramos abiertos a establecer alianzas con instituciones públicas, privadas y organizaciones 
-          territoriales interesadas en desarrollar <span>proyectos culturales en la Región de Los Ríos</span> 
-          y fortalecer procesos de educación artística.
+          <p className="about-work__intro">
+            Somos una plataforma cultural independiente dedicada al desarrollo,
+            circulación y fortalecimiento de las artes escénicas
+            contemporáneas en la Región de Los Ríos.
           </p>
-          
         </div>
 
-        <div className="about-block vision">
-          <h2>Proyección</h2>
+        <div className="about-work__grid">
+          {ejes.map((eje) => (
+            <article className="about-work__item" key={eje.number}>
+              <span className="about-work__number">{eje.number}</span>
+
+              <h3>{eje.title}</h3>
+
+              <p>{eje.description}</p>
+
+              <span className="about-work__line" />
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* PROYECCIÓN */}
+      <section className="about-future">
+        <div className="about-future__visual">
+          <span className="about-future__word">SUR</span>
+        </div>
+
+        <div className="about-future__content">
+          <p className="about-eyebrow">Proyección</p>
+
+          <h2>
+            Desde el sur,
+            <br />
+            <span>sin fronteras.</span>
+          </h2>
+
           <p>
-          Aspiramos a consolidarnos como una <span>plataforma cultural independiente</span> y una <span>compañía de 
-          artes escénicas integradas en Chile</span> referente en el desarrollo cultural <span>en la Región de Los Ríos,</span>
-          contribuyendo activamente a la descentralización, profesionalización y sostenibilidad del sector cultural.<br/><br/>
+            Aspiramos a consolidarnos como una plataforma cultural independiente
+            referente en el desarrollo de las artes escénicas contemporáneas en
+            la Región de Los Ríos, contribuyendo a la descentralización,
+            profesionalización y sostenibilidad del sector cultural.
+          </p>
 
-          Nuestro proyecto promueve una programación de alta calidad que integra artes escénicas, conciertos en 
-          pequeño y gran formato, varietés multidisciplinarias locales, lanzamientos audiovisuales y propuestas 
-          estéticas en espacios no convencionales, fortaleciendo el ecosistema de las <span>artes escénicas en el sur de Chile.</span><br/><br/>
-          
-          Nuestras obras han sido presentadas en La Unión, Río Bueno, Frutillar y Valparaíso, así como en Colombia, 
-          Ecuador y Estados Unidos. Desde nuestro territorio, hemos logrado consolidar una <span>comunidad cultural 
-          con suscripción mensual,</span> generando vínculos estables con el público y avanzando hacia modelos 
-          sostenibles de <span>financiamiento cultural independiente.</span><br/><br/>
-
-          Proyectamos nuestro trabajo como un aporte permanente al desarrollo de la <span>cultura independiente del 
-          sur de Chile,</span> ampliando el acceso, la circulación y la valoración de las artes escénicas 
-          contemporáneas desde una perspectiva territorial y colaborativa.
+          <p>
+            Nuestras obras han circulado por Chile y países como Colombia,
+            Ecuador y Estados Unidos. Proyectamos nuestro trabajo hacia nuevas
+            redes, alianzas y territorios, manteniendo siempre el sur como punto
+            de origen.
           </p>
         </div>
       </section>
-    </div>
+    </main>
   );
 }

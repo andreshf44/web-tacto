@@ -1,122 +1,120 @@
 // src/pages/Home.js
-import React, { useState, useEffect } from "react";
+
+import React from "react";
 import { useNavigate } from "react-router-dom";
-import "./Home.css"; // Importar CSS
+import "./Home.css";
 import About from "./About";
 import Contact from "./Contact";
 import Gallery from "./Gallery";
 import Team from "./Team";
-//import News from "./News";
 import Subscription from "./Subscription";
 
 function Home() {
   const navigate = useNavigate();
-  const [hideHeader, setHideHeader] = useState(false);
-  const [showIntroVideo, setShowIntroVideo] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      // Si el scroll es mayor a 10 px, escondemos header
-      if (window.scrollY > 10) {
-        setHideHeader(true);
-      } else {
-        setHideHeader(false);
-      }
-    };
+  const scrollToSection = (sectionId) => {
+    document
+      .getElementById(sectionId)
+      ?.scrollIntoView({ behavior: "smooth" });
+  };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-  
-  useEffect(() => {
-    const hasSeenVideo = sessionStorage.getItem("introVideoSeen");
-  
-    if (!hasSeenVideo) {
-      setShowIntroVideo(true);
-      sessionStorage.setItem("introVideoSeen", "true");
-    }
-  }, []);
-  
   return (
-    <div>
-        {showIntroVideo && (
-          <div className="intro-video-overlay">
-            <div className="intro-video-container">
-      
-            <h1 class="neon">PLATAFORMA TACTO SUR</h1>
-              <button className="close-video" onClick={() => setShowIntroVideo(false)}>
-                ✕
-              </button>
+    <main>
+      {/* HERO CON VIDEO */}
+      <header className="hero" id="inicio">
+        <video
+          className="hero__video"
+          src="/videos/intro.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+        />
 
-              <video
-                src="/videos/intro.mp4"
-                autoPlay
-                muted
-                playsInline
-                onEnded={() => setShowIntroVideo(false)}
-              />
-            </div>
+        <div className="hero__overlay" />
+        <div className="hero__gradient" />
+
+        <span className="hero__vertical-word" aria-hidden="true">
+          SUR
+        </span>
+
+        <div className="hero__content">
+          <p className="hero__eyebrow">
+            Plataforma de artes escénicas contemporáneas
+          </p>
+
+          <h1 className="hero__title">
+            Artes escénicas
+            <span>desde el territorio.</span>
+          </h1>
+
+          <p className="hero__description">
+            Creación, cuerpo y experimentación contemporánea desde la Región de
+            Los Ríos, Chile.
+          </p>
+
+          <div className="hero__actions">
+            <button
+              type="button"
+              className="hero__button hero__button--primary"
+              onClick={() => scrollToSection("gallery")}
+            >
+              Explorar nuestro trabajo
+            </button>
+
+            <button
+              type="button"
+              className="hero__button hero__button--secondary"
+              onClick={() => scrollToSection("about")}
+            >
+              Conocer la plataforma
+            </button>
           </div>
-        )}
-        {/* Sección de bienvenida */}
-        <header className={`home-header ${hideHeader ? "no-visible" : ""}`}>
-            <div className="home-header-content">
-                <h1>Bienvenidos</h1>
-                <p>Somos una plataforma cultural independiente y compañía de artes escénicas contemporáneas con base
-                   en Río Bueno y La Unión, en la Región de Los Ríos. Desde el sur de Chile, desarrollamos danza 
-                   contemporánea, performance, música, diseño gráfico y audiovisual desde una mirada territorial, 
-                   colaborativa y descentralizada. <br/><br/>
-                   Trabajamos para fortalecer la cultura independiente, impulsando la creación, difusión, circulación 
-                   y formación artística, generando audiencias y acompañando a artistas independientes en su proyección 
-                   regional, nacional e internacional.<br/><br/>
-                   Al unirte a Amigxs de Tacto, te conviertes en parte activa de este proceso. Tu suscripción 
-                   permite sostener y proyectar las artes escénicas contemporáneas desde el territorio, apoyando una 
-                   gestión cultural autónoma y comprometida con la Región de Los Ríos.
-                </p>
-                <button
-                  className="subscribe-btn"
-                  onClick={() => navigate("/subscription")}
-                >
-                  Suscribirse
-                </button>
-            </div>
-        </header>
+        </div>
 
-        {/* Misión y Visión */}
+        <button
+          type="button"
+          className="hero__scroll"
+          onClick={() => scrollToSection("about")}
+          aria-label="Ir a la siguiente sección"
+        >
+          <span>Desliza</span>
+          <span className="hero__scroll-line" />
+        </button>
+      </header>
+
+      {/* SOBRE NOSOTROS */}
       <section className="home-section" id="about">
         <About />
       </section>
 
-      {/* Galería */}
+      {/* OBRAS */}
       <section className="home-section-alt" id="gallery">
-        <h2>Galería</h2>
         <Gallery />
       </section>
 
-      {/* Equipo */}
+      {/* QUÉ HACEMOS */}
+      <section className="home-section" id="platform">
+        {/* Aquí después podemos crear la nueva sección Qué hacemos */}
+      </section>
+
+      {/* EQUIPO */}
       <section className="home-section" id="team">
-        <h2>Conoce a nuestro equipo</h2>
         <Team />
       </section>
 
-      {/* Noticias 
-      <section className="home-section-alt" id="news">
-        <News />
-      </section>
-      */}
-      {/* Suscripción */}
+      {/* SUSCRIPCIÓN */}
       <section className="home-section" id="subscription">
         <Subscription />
       </section>
 
-      {/* Contacto */}
+      {/* CONTACTO */}
       <section className="home-section" id="contacto">
         <Contact />
       </section>
-    </div>
+    </main>
   );
 }
 
 export default Home;
-
-

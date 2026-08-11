@@ -1,5 +1,7 @@
 // src/pages/Contact.js
+
 import React, { useState } from "react";
+
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -10,72 +12,179 @@ export default function Contact() {
   });
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const companyPhone = " 56 9 5617 2155"; // número de la compañía con código de país
-    const text = `Hola, soy ${formData.name}.\nCorreo: ${formData.email}\nAsunto: ${formData.subject}\nMensaje: ${formData.message}`;
+    const companyPhone = "56956172155";
 
-    // Codificar el mensaje para la URL
-    const encodedText = encodeURIComponent(text);
-    const whatsappUrl = `https://api.whatsapp.com/send?phone=${companyPhone}&text=${encodedText}`;
+    const text = `Hola Tacto Sur,
 
-    // Abrir WhatsApp en nueva pestaña
-    window.open(whatsappUrl, "_blank");
+Soy ${formData.name}.
 
-    // Limpiar formulario
-    setFormData({ name: "", email: "", subject: "", message: "" });
+Correo: ${formData.email}
+Asunto: ${formData.subject || "Consulta general"}
+
+Mensaje:
+${formData.message}`;
+
+    const whatsappUrl = `https://wa.me/${companyPhone}?text=${encodeURIComponent(
+      text
+    )}`;
+
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+
+    setFormData({
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    });
   };
 
   return (
-    <section className="contact-section" id="contact">
-      <div className="contact-container">
-        <div className="contact-info">
-          <h1>Contáctanos</h1>
-          <p>
-            ¿Tienes preguntas o quieres más información sobre nuestras clases y
-            presentaciones? Escríbenos y te responderemos a la brevedad.
+    <section className="contact" id="contacto">
+      <div className="contact__container">
+        {/* INFORMACIÓN */}
+        <div className="contact__info">
+          <p className="contact__eyebrow">
+            Contacto
           </p>
-          <p><strong>Email:</strong> tactosur@gmail.com</p>
-          <p><strong>Teléfono:</strong>+56 9 5617 2155</p>
+
+          <h2>
+            Conversemos.
+            <br />
+            <span>Algo puede empezar acá.</span>
+          </h2>
+
+          <p className="contact__description">
+            ¿Quieres programar una obra, proponer una colaboración,
+            conversar sobre formación, prensa o desarrollar un proyecto
+            junto a Tacto Sur? Escríbenos.
+          </p>
+
+          <div className="contact__links">
+            <a href="mailto:tactosur@gmail.com">
+              <span>Email</span>
+              <strong>tactosur@gmail.com</strong>
+            </a>
+
+            <a
+              href="https://wa.me/56956172155"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>WhatsApp</span>
+              <strong>+56 9 5617 2155</strong>
+            </a>
+
+            <div className="contact__location">
+              <span>Territorio</span>
+              <strong>
+                Río Bueno · La Unión
+                <br />
+                Región de Los Ríos · Chile
+              </strong>
+            </div>
+          </div>
+
+          <div
+            className="contact__mark"
+            aria-hidden="true"
+          >
+            SUR
+          </div>
         </div>
 
-        <div className="contact-form-container">
-          <form className="contact-form" onSubmit={handleSubmit}>
-            <input
-              type="text"
-              name="name"
-              placeholder="Nombre"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Correo electrónico"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-            <input
-              type="text"
-              name="subject"
-              placeholder="Asunto"
-              value={formData.subject}
-              onChange={handleChange}
-            />
-            <textarea
-              name="message"
-              placeholder="Mensaje"
-              value={formData.message}
-              onChange={handleChange}
-              required
-            ></textarea>
-            <button type="submit">Enviar por WhatsApp</button>
+        {/* FORMULARIO */}
+        <div className="contact__form-wrapper">
+          <form
+            className="contact__form"
+            onSubmit={handleSubmit}
+          >
+            <div className="contact__form-header">
+              <span>Escríbenos</span>
+              <span>01 — 04</span>
+            </div>
+
+            <div className="contact__field">
+              <label htmlFor="contact-name">
+                Nombre
+              </label>
+
+              <input
+                id="contact-name"
+                type="text"
+                name="name"
+                placeholder="Tu nombre"
+                value={formData.name}
+                onChange={handleChange}
+                required
+              />
+            </div>
+
+            <div className="contact__field">
+              <label htmlFor="contact-email">
+                Correo
+              </label>
+
+              <input
+                id="contact-email"
+                type="email"
+                name="email"
+                placeholder="tu@email.com"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+            </div>
+
+            <div className="contact__field">
+              <label htmlFor="contact-subject">
+                Asunto
+              </label>
+
+              <input
+                id="contact-subject"
+                type="text"
+                name="subject"
+                placeholder="Programación, colaboración, prensa..."
+                value={formData.subject}
+                onChange={handleChange}
+              />
+            </div>
+
+            <div className="contact__field">
+              <label htmlFor="contact-message">
+                Mensaje
+              </label>
+
+              <textarea
+                id="contact-message"
+                name="message"
+                placeholder="Cuéntanos un poco..."
+                value={formData.message}
+                onChange={handleChange}
+                required
+              />
+            </div>
+
+            <button
+              type="submit"
+              className="contact__submit"
+            >
+              <span>Enviar por WhatsApp</span>
+              <span>↗</span>
+            </button>
+
+            <p className="contact__helper">
+              Tu mensaje se abrirá directamente en WhatsApp.
+            </p>
           </form>
         </div>
       </div>

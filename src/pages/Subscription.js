@@ -1,97 +1,208 @@
 // src/components/Subscription.js
-import React, { useState } from "react";
+
+import React, { useEffect, useState } from "react";
 
 function Subscription() {
   const [open, setOpen] = useState(false);
+
   const handleSubscribe = () => {
-    // Redirige a la URL deseada
-    window.location.href = "https://www.mercadopago.cl/subscriptions/checkout?preapproval_plan_id=08e9c5175b3548cc95109671b16cdfa1";
+    window.location.href =
+      "https://www.mercadopago.cl/subscriptions/checkout?preapproval_plan_id=08e9c5175b3548cc95109671b16cdfa1";
   };
+
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        setOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
 
   return (
     <>
-    <div className="subscription-container">
-      <div className="subscription-title">
-        <h2>Suscríbete</h2>
-
-        <button
-          className="info-icon"
-          onClick={() => setOpen(true)}
-          aria-label="¿Qué significa ser Amigx de Tacto?"
-        >
-          ?
-          <span className="tooltip">
-            ¿Qué significa ser Amigx de Tacto?
+      <section className="subscription" id="suscripcion">
+        <div className="subscription__visual">
+          <span className="subscription__word" aria-hidden="true">
+            AMIGXS
           </span>
-        </button>
-      </div>
-      <p>
-        ¿Te gusta el arte y la cultura? ¿Te gustaría apoyar a un proyecto multidisciplinario en el sur de Chile? 
-      </p>
-      <button className="subscribe-button" onClick={handleSubscribe}>
-        Suscribirse
-      </button>
-      <p className="subscription-helper">
-        Desde $5.000 mensuales ·{" "}
-        <span onClick={() => setOpen(true)}>
-          ¿Qué significa ser Amigx de Tacto?
-        </span>
-      </p>
-    </div>
+        </div>
 
-    {/* MODAL */}
-    {open && (
-        <div className="modal-overlay" onClick={() => setOpen(false)}>
+        <div className="subscription__content">
+          <p className="subscription__eyebrow">
+            Comunidad Tacto
+          </p>
+
+          <h2>
+            La cultura independiente
+            <br />
+            <span>también se sostiene en comunidad.</span>
+          </h2>
+
+          <p className="subscription__description">
+            Súmate a una red que impulsa creación, circulación,
+            formación y producción artística desde el sur de Chile.
+          </p>
+
+          <div className="subscription__price">
+            <span>Desde</span>
+
+            <strong>$5.000</strong>
+
+            <span>mensuales</span>
+          </div>
+
+          <div className="subscription__actions">
+            <button
+              type="button"
+              className="subscription__button subscription__button--primary"
+              onClick={handleSubscribe}
+            >
+              Hazte Amigx
+            </button>
+
+            <button
+              type="button"
+              className="subscription__button subscription__button--secondary"
+              onClick={() => setOpen(true)}
+            >
+              Conocer beneficios
+            </button>
+          </div>
+
+          <p className="subscription__note">
+            Tu aporte ayuda a sostener producción, salas de ensayo,
+            teatros, circulación, iluminación, sonido y movilidad de artistas.
+          </p>
+        </div>
+      </section>
+
+      {open && (
+        <div
+          className="subscription-modal"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="subscription-modal-title"
+          onClick={() => setOpen(false)}
+        >
           <div
-            className="modal-content"
+            className="subscription-modal__content"
             onClick={(e) => e.stopPropagation()}
           >
             <button
-              className="modal-close"
+              type="button"
+              className="subscription-modal__close"
               onClick={() => setOpen(false)}
+              aria-label="Cerrar información de suscripción"
             >
               ×
             </button>
 
-            <div className="info-suscripcion">
-            <h3>Hazte Amigx de Tacto</h3>
+            <div className="subscription-modal__header">
+              <p className="subscription__eyebrow">
+                Amigxs de Tacto
+              </p>
 
-            <p>
-              ¿Te gusta el arte y la cultura? ¿Te gustaría apoyar a un proyecto
-              multidisciplinario en el sur de Chile? Te invitamos a sumarte a
-              Plataforma Tacto.
-            </p>
+              <h3 id="subscription-modal-title">
+                Sostener también
+                <br />
+                <span>es participar.</span>
+              </h3>
 
-            <p>
-              En hacerte Amigx de Tacto, te comprometes con un <strong>aporte mensual
-              desde $5.000</strong>. Somos artistas independientes, por lo tanto funcionamos desde la autogestión, 
-              financiados por diferentes fuentes públicas y privadas. Los fondos que se recaudan en la plataforma 
-              serán destinados para cubrir gastos de: producción, arriendo de sala de ensayo y teatros, iluminación 
-              y sonido, publicidad, pasajes de artistas interregionales, pasajes para invitaciones a certámenes, 
-              festivales nacionales e internacionales, entre otros. Todos estos ingresos y gastos serán rendidos a 
-              los Amigxs de Tacto para una mayor transparencia en la distribución de fondos.
-            </p>
+              <p>
+                Al hacerte Amigx de Tacto, te comprometes con un aporte
+                mensual desde $5.000 y pasas a formar parte de una comunidad
+                que apoya directamente el desarrollo de las artes escénicas
+                contemporáneas desde la Región de Los Ríos.
+              </p>
+            </div>
 
-            <h3>Beneficios</h3>
-            <ul>
-              <li><strong>Descuentos y promociones especiales en todas nuestras actividades:</strong> 
-                Estrenos de obras, instalaciones, conciertos, exposiciones, festivales, lanzamientos audiovisuales, 
-                talleres, residencias, seminarios. Para Amigxs de Tacto que están fuera de la región o el país, 
-                habrá actividades online.
-              </li>
-              <li><strong>Espacio publicitario gratuito:</strong> Los Amigxs de Tacto podrán compartir la publicidad de su 
-                emprendimiento, negocio o empresa en nuestra plataforma. La cantidad de publicidad será proporcional
-                al aporte mensual.
-              </li>
-            </ul>
+            <div className="subscription-modal__grid">
+              <div className="subscription-modal__block">
+                <span className="subscription-modal__number">
+                  01
+                </span>
+
+                <h4>¿A dónde va tu aporte?</h4>
+
+                <p>
+                  Los fondos permiten cubrir producción, arriendo de salas
+                  de ensayo y teatros, iluminación y sonido, publicidad,
+                  traslados de artistas, circulación regional e internacional
+                  y participación en festivales y certámenes.
+                </p>
+              </div>
+
+              <div className="subscription-modal__block">
+                <span className="subscription-modal__number">
+                  02
+                </span>
+
+                <h4>Transparencia</h4>
+
+                <p>
+                  Los ingresos y gastos asociados a la plataforma serán
+                  informados a la comunidad de Amigxs de Tacto para mantener
+                  claridad y transparencia en la distribución de los fondos.
+                </p>
+              </div>
+
+              <div className="subscription-modal__block">
+                <span className="subscription-modal__number">
+                  03
+                </span>
+
+                <h4>Beneficios</h4>
+
+                <p>
+                  Acceso a descuentos y promociones en estrenos,
+                  instalaciones, conciertos, exposiciones, festivales,
+                  talleres, residencias, seminarios y actividades especiales.
+                </p>
+              </div>
+
+              <div className="subscription-modal__block">
+                <span className="subscription-modal__number">
+                  04
+                </span>
+
+                <h4>Difusión</h4>
+
+                <p>
+                  Los Amigxs de Tacto pueden acceder a espacios de difusión
+                  para emprendimientos, proyectos, negocios o iniciativas
+                  vinculadas a la comunidad.
+                </p>
+              </div>
+            </div>
+
+            <div className="subscription-modal__footer">
+              <button
+                type="button"
+                className="subscription__button subscription__button--primary"
+                onClick={handleSubscribe}
+              >
+                Quiero ser Amigx de Tacto
+              </button>
             </div>
           </div>
         </div>
-    )}
+      )}
     </>
   );
 }
 
 export default Subscription;
-
-
